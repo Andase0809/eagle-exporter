@@ -29,12 +29,46 @@ Eagle Exporter 就是为这个场景做的本地桌面工具。它会读取 Eagl
 
 项目支持浅色和深色主题切换，主流程分为基础配置、数据集选择和偏好设置。导出的 Excel 文件会保留素材缩略图、标题、内容描述和话题标签，方便横向浏览和人工筛选。
 
-如果需要在 GitHub 首页展示实际效果，可以将截图放入 `docs/screenshots/`，推荐命名：
+### Light / Dark 双主题
 
-- `light-home.png`：浅色主题首页
-- `light-exported.png`：扫描与导出完成状态
-- `settings-theme.png`：Light / Dark 主题设置
-- `excel-output.png`：Excel 导出结果
+工具使用 CustomTkinter 构建桌面界面，保留了轻量、直接的操作路径，同时支持 Light 和 Dark 两种显示风格。日常整理素材时可以使用浅色界面，长时间查看或夜间处理素材时可以切换到深色界面。
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="docs/screenshots/theme-light.png" alt="Light theme settings" />
+      <br />
+      <strong>Light 模式</strong>
+      <br />
+      在偏好设置中切换界面显示风格，并保留任务完成弹窗提醒开关。
+    </td>
+    <td width="50%">
+      <img src="docs/screenshots/theme-dark.png" alt="Dark theme settings" />
+      <br />
+      <strong>Dark 模式</strong>
+      <br />
+      深色界面适合长时间查看素材列表，减少在夜间整理图片和文案时的视觉压力。
+    </td>
+  </tr>
+</table>
+
+### 按 Eagle 分类选择导出范围
+
+扫描完成后，工具会把 Eagle 文件夹映射成可勾选的数据集。用户可以只导出当前要整理的分类，而不是把整个素材库一次性全部导出，适合按项目、主题、平台或内容方向分批处理。
+
+![数据集选择](docs/screenshots/dataset-selection.png)
+
+### 扫描与批量导出
+
+基础配置页聚合了资源库路径、导出目录、并发线程和导出格式。日志区会展示扫描数量、耗时和生成结果，便于确认本次导出是否完成。展示图中的本地路径已做脱敏处理。
+
+![扫描与导出完成](docs/screenshots/export-complete.png)
+
+### Excel 表格化查看素材
+
+Excel 导出会把图片缩略图、标题、内容描述和话题标签放在同一张表里。相比在 Eagle 里逐张打开图片，这种方式更适合横向浏览、筛选、复盘和交付，尤其适合素材量已经积累到几百或几千张的情况。
+
+![Excel 导出结果](docs/screenshots/excel-output.png)
 
 ## 项目结构
 
