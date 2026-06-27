@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eagle-exporter"
+version = "1.0.0"
+description = "Desktop tool for exporting Eagle library metadata to Excel, Markdown, and JSON."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Eagle Exporter Contributors" }
+]
+dependencies = [
+  "customtkinter>=5.2.0",
+  "pillow>=10.0.0",
+  "xlsxwriter>=3.1.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0"
+]
+
+[project.scripts]
+eagle-exporter = "eagle_exporter.app:main"
+
+[tool.setuptools.packages.find]
+include = ["eagle_exporter*"]
